@@ -1,13 +1,20 @@
 export class Branch {
-  constructor(startX, startY, endX, endY, lineWidth) {
+  constructor(startX, startY, endX, endY, lineWidth, color) {
     this.startX = startX;
     this.startY = startY;
     this.endX = endX;
     this.endY = endY;
-    this.color = '#000000';
     this.lineWidth = lineWidth;
+    this.colors = [
+      `rgba(255, ${lineWidth * 21.25}, ${lineWidth * 21.25})`,
+      `rgba(${lineWidth * 21.25}, ${lineWidth * 21.25}, 255)`,
+      `rgba(${lineWidth * 21.25}, 255, ${lineWidth * 21.25})`,
+      `rgba(255, 255, ${lineWidth * 21.25})`,
+      `rgba(255, ${lineWidth * 21.25} ,255)`,
+    ];
+    this.color = this.colors[color];
 
-    this.frame = 20;
+    this.frame = 10;
     this.cntFrame = 0;
 
     this.gapX = (this.endX - this.startX) / this.frame;

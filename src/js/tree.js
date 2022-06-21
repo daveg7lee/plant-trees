@@ -1,4 +1,4 @@
-import { Branch } from './branch.js';
+import { Branch } from "./branch.js";
 
 export class Tree {
   constructor(ctx, posX, posY) {
@@ -7,6 +7,7 @@ export class Tree {
     this.posY = posY;
     this.branches = [];
     this.depth = 12;
+    this.rand = Math.floor(Math.random() * 5);
 
     this.cntDepth = 0;
     this.animation = null;
@@ -32,7 +33,7 @@ export class Tree {
     const endY = startY + this.sin(angle) * len * (this.depth - depth);
 
     this.branches[depth].push(
-      new Branch(startX, startY, endX, endY, this.depth - depth)
+      new Branch(startX, startY, endX, endY, this.depth - depth, this.rand)
     );
 
     this.createBranch(endX, endY, angle - this.random(15, 23), depth + 1);
