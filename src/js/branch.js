@@ -14,7 +14,7 @@ export class Branch {
     ];
     this.color = this.colors[color];
 
-    this.frame = 10;
+    this.frame = 8;
     this.cntFrame = 0;
 
     this.gapX = (this.endX - this.startX) / this.frame;
