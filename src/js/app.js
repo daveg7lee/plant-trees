@@ -1,14 +1,14 @@
-import { Tree } from './tree.js';
+import { Tree } from "./tree.js";
 
 class App {
   constructor() {
-    this.canvas = document.querySelector('canvas');
+    this.canvas = document.querySelector("canvas");
 
-    this.ctx = this.canvas.getContext('2d');
+    this.ctx = this.canvas.getContext("2d");
     this.pixelRatio = window.devicePixelRatio > 1 ? 1 : 1;
 
-    window.addEventListener('resize', this.resize.bind(this), false);
-    window.addEventListener('click', this.click.bind(this), false);
+    window.addEventListener("resize", this.resize.bind(this), false);
+    window.addEventListener("click", this.click.bind(this), false);
     this.resize();
   }
 
@@ -24,12 +24,12 @@ class App {
   }
 
   click(event) {
-    const { clientX } = event;
-    this.draw(clientX);
+    const { clientX, clientY } = event;
+    this.draw(clientX, clientY);
   }
 
-  draw(clientX) {
-    new Tree(this.ctx, clientX, this.stageHeight);
+  draw(clientX, clientY) {
+    new Tree(this.ctx, clientX, this.stageHeight, clientY);
   }
 }
 

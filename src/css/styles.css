@@ -1,6 +1,17 @@
 body {
     margin: 0;
-    padding: 1rem;
+    padding: 0;
     background-color: black;
     position: fixed
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    position: fixed;
+    top: 10px;
+    left: 10px;
 }
